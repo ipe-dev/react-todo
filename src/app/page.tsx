@@ -1,15 +1,15 @@
 "use client"
 import axios from "axios";
 import App from "next/app";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
+  const [csrfToken, setCsrfToken] = useState("")
   useEffect(() => {
-    const getCsrfToken = async() => {
-      await fetch(
-        ""
-      )
-    }
+    
+    const csrfToken = async() => await getCsrfToken()
+    setCsrfToken(csrfToken)
   },[])
   return (
     <App />
