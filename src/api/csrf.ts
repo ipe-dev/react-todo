@@ -1,11 +1,8 @@
-type csrfResponse = {
-  csrfToken: string
-}
-const getCsrfToken = async<csrfResponse> () => {
-  return await fetch(`${process.env.REACT_APP_API_URL}/csrf`, {
-    method: "GET",
-    credentials: "include",
-    cache: "no-store",
-  });
+import { get } from "@/lib/http";
 
+type csrfResponse = {
+  csrf_token: string
+}
+export const getCsrfToken = async () => {
+  return await get<csrfResponse>(`${process.env.NEXT_PUBLIC_API_URL}/csrf`)
 };
