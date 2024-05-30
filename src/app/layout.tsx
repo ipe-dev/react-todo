@@ -19,10 +19,7 @@ export default function RootLayout({
   const queryClient = new QueryClient({})
   return (
     <html lang="ja">
-      <QueryClientProvider client={queryClient}>
         <body className={inter.className}>{children}</body>
-        <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>
-      </QueryClientProvider>
     </html>
   );
 }

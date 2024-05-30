@@ -1,5 +1,6 @@
 "use client"
 import { getCsrfToken } from "@/api/csrf";
+import { Auth } from "@/components/Auth";
 import { useEffect, useState } from "react";
 export default function Home() {
   const [ csrfToken, setCsrfToken ] = useState("")
@@ -14,6 +15,6 @@ export default function Home() {
     fetchCsrfToken()
   }, [])
   return (
-    <h1>test</h1>
+    <Auth/>
   );
 }
